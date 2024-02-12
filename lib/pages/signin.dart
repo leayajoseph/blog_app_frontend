@@ -1,3 +1,4 @@
+import 'package:blog_app/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class SigninPage extends StatefulWidget {
@@ -23,6 +24,7 @@ class _SigninPageState extends State<SigninPage> {
         padding: EdgeInsets.all(20),
         width: double.infinity,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               controller: ob1,
@@ -44,7 +46,7 @@ class _SigninPageState extends State<SigninPage> {
             SizedBox(height: 10,),
             ElevatedButton(onPressed: ()
             {
-
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupPage()));
             }, child: Text("New user")),
             SizedBox(height: 10,)
           ],
