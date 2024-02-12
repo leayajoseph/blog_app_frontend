@@ -20,7 +20,8 @@ class _SigninPageState extends State<SigninPage> {
     final response=await SignupServiceApi().sendLogin(email, pass);
     if(response["status"]=="success")
       {
-        print("success");
+        String userid=response["userdata"]["_id"].toString();
+        print("success \nid: "+userid);
       }
     else if(response["status"]=="invalid email id")
       {
