@@ -1,4 +1,5 @@
 import 'package:blog_app/pages/signup.dart';
+import 'package:blog_app/service/signupService.dart';
 import 'package:flutter/material.dart';
 
 class SigninPage extends StatefulWidget {
@@ -16,6 +17,19 @@ class _SigninPageState extends State<SigninPage> {
     email=ob1.text;
     pass=ob2.text;
     print("email: "+email+"\npassword: "+pass);
+    final response=await SignupServiceApi().sendLogin(email, pass);
+    if(response["status"]=="success")
+      {
+        print("success");
+      }
+    else if(response["status"]=="invalid email id")
+      {
+        print("invalid email id");
+      }
+    else
+      {
+        print("invalid password");
+      }
   }
   @override
   Widget build(BuildContext context) {
