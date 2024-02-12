@@ -1,3 +1,4 @@
+import 'package:blog_app/service/signupService.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
@@ -31,6 +32,16 @@ class _SignupPageState extends State<SignupPage> {
         "\npin code: "+pin+
         "\nemail: "+email+
         "\npassword: "+pass);
+
+    final response=await SignupServiceApi().sendData(name, age, ph, add, pin, email, pass);
+    if(response["status"]=="success")
+      {
+        print("successfully added");
+      }
+    else
+      {
+        print("failed");
+      }
   }
   @override
   Widget build(BuildContext context) {
