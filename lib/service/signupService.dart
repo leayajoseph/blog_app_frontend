@@ -8,7 +8,7 @@ class SignupServiceApi
       String name,String age,String ph,String add,String pin,String email,String pass
       ) async{
     var client=http.Client();
-    var apiUrl=Uri.parse("http://172.16.185.178:3001/api/signup/add");
+    var apiUrl=Uri.parse("http://192.168.29.217:3001/api/signup/add");
     var response=await client.post(apiUrl,
     headers: <String,String>
     {
@@ -37,7 +37,7 @@ class SignupServiceApi
       String email,String pass
       )async{
     var client=http.Client();
-    var apiUrl=Uri.parse("http://172.16.185.178:3001/api/signup/login");
+    var apiUrl=Uri.parse("http://192.168.29.217:3001/api/signup/login");
     var response=await client.post(apiUrl,
     headers: <String,String>{
       "Content-Type":"application/json ; charset=UTF-8"

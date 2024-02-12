@@ -1,3 +1,4 @@
+import 'package:blog_app/pages/blog_app.dart';
 import 'package:blog_app/pages/signup.dart';
 import 'package:blog_app/service/signupService.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class _SigninPageState extends State<SigninPage> {
         SharedPreferences preferences=await SharedPreferences.getInstance();
         preferences.setString("userId", userid);
         print("success \nid: "+userid);
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>BlogApp()));
       }
     else if(response["status"]=="invalid email id")
       {
