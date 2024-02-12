@@ -1,6 +1,7 @@
 import 'package:blog_app/pages/signup.dart';
 import 'package:blog_app/service/signupService.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninPage extends StatefulWidget {
   const SigninPage({super.key});
@@ -21,6 +22,8 @@ class _SigninPageState extends State<SigninPage> {
     if(response["status"]=="success")
       {
         String userid=response["userdata"]["_id"].toString();
+        SharedPreferences preferences=await SharedPreferences.getInstance();
+        preferences.setString("userId", userid);
         print("success \nid: "+userid);
       }
     else if(response["status"]=="invalid email id")
