@@ -1,4 +1,5 @@
 import 'package:blog_app/pages/add_post.dart';
+import 'package:blog_app/pages/view_post.dart';
 import 'package:flutter/material.dart';
 
 class BlogApp extends StatelessWidget {
@@ -26,7 +27,7 @@ class BlogApp extends StatelessWidget {
               SizedBox(height: 10,),
               ElevatedButton(onPressed: ()
                   {
-
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>ViewPost()));
                   }, child: Text("View Post")),
               SizedBox(height: 10,)
             ],
